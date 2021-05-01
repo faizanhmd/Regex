@@ -1,0 +1,24 @@
+def phone_number(text):
+    if len(text) != 14:
+        return False
+    if text[0] != "+":
+        return False
+    for i in range(1,3):
+        if not text[i].isdecimal():
+            return False
+    if text[3] != "-":
+        return False
+    for i in range(4,14):
+        if not text[i].isdecimal():
+            return False
+    return True
+
+foundNumber = False
+Any_string = "hey there please call me at +91-1112222254 or +91-9999888875"
+for i in range(len(Any_string)):
+    chunk = Any_string[i:i+14]
+    if phone_number(chunk):
+        print("The phone numbers are: ", chunk)
+        foundNumber = True
+if not foundNumber:
+    print("No Phone numbers found.")
