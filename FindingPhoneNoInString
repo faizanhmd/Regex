@@ -1,3 +1,5 @@
+#Example of text pattern recognition in a file/string
+
 def phone_number(text):
     if len(text) != 14:
         return False
