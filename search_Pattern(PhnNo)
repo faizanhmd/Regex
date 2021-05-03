@@ -1,0 +1,7 @@
+import re
+
+any_string = '''hello, my name is faizan. These are my contact numbers: +91-1234567899 and 9876543211.
+feel free to call me at working hours not 247.
+'''
+numberRegex = re.compile(r"((\+\d\d-)?\d\d\d\d\d\d\d\d\d\d)")
+print(numberRegex.findall(any_string))
